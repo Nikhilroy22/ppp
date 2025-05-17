@@ -1,0 +1,91 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+  
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/textview1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="12sp"
+                    android:textColor="#000000" />
+
+                <EditText
+                    android:id="@+id/edittext1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="#000000"
+                    android:hint="Edit Text"
+                    android:textColorHint="#607D8B" />
+
+                <Button
+                    android:id="@+id/logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LogOut"
+                    android:layout_marginTop="16dp" />
+            
+            
+            
+            
+            
+            <TextView
+					android:id="@+id/textview2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="25dp"
+					android:layout_marginBottom="30dp"
+					android:paddingTop="2dp"
+					android:paddingRight="2dp"
+					android:paddingBottom="2dp"
+					android:text="Account"
+					android:textSize="25sp"
+					android:textColor="#0F121F" />
+
+
+<LinearLayout
+						android:id="@+id/linear4"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:gravity="left|center_vertical"
+						android:orientation="vertical">
+						<TextView
+							android:id="@+id/textview3"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="5dp"
+							android:text="Seven"
+							android:textSize="18sp"
+							android:textColor="#191D2E" />
+						<TextView
+							android:id="@+id/textview4"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="Personal Information"
+							android:textSize="14sp"
+							android:textColor="#757575" />
+					</LinearLayout>
+    </LinearLayout>
+        </ScrollView>
+
+
+</LinearLayout>

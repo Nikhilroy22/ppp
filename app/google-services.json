@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "696051132344",
+    "project_id": "npuja-963b0",
+    "storage_bucket": "npuja-963b0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696051132344:android:fa109809f87efa82b2514d",
+        "android_client_info": {
+          "package_name": "com.npuja.nikhil"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwpbOCPcsDWurKD69TIV_nJrTqBMXMpLk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

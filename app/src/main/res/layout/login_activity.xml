@@ -1,0 +1,143 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    
+    android:orientation="vertical">
+  
+  
+  
+  
+  <Switch
+    android:id="@+id/mySwitch"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="অবস্থা পরিবর্তন করুন" />
+  
+  
+  <Spinner
+    android:id="@+id/mySpinner"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+				android:layout_margin="20dp"
+				
+				android:background="@drawable/bgi"
+				android:textSize="14sp"
+				android:textColor="#212121"
+				android:padding="10dp"
+				
+				 />
+  
+  
+   
+  
+  
+  <ScrollView
+		android:id="@+id/scroller"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#FFFFFF">
+ <LinearLayout
+			android:id="@+id/main_line"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:paddingLeft="30dp"
+			android:paddingTop="8dp"
+			android:paddingRight="30dp"
+			android:paddingBottom="8dp"
+			android:background="#FFFFFF"
+			android:gravity="center_horizontal|center_vertical"
+			android:orientation="vertical"
+			android:layout_gravity="center_horizontal|center_vertical">
+  
+  
+  
+  <TextView
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   android:text="Login"
+	 android:textSize="40sp"
+	 android:textStyle="bold"
+   android:layout_marginBottom="25dp"
+   android:gravity="center"
+    
+    
+    />
+  <EditText
+
+				android:id="@+id/username"
+
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="10dp"
+				android:paddingLeft="22dp"
+				android:paddingTop="16dp"
+				android:paddingRight="16dp"
+				android:paddingBottom="16dp"
+				android:background="#E1F8DC"
+				android:textSize="14sp"
+				android:textColor="#212121"
+				android:hint="Username"
+				android:textColorHint="#607D8B"
+				android:singleLine="true" />
+  
+ 
+   <TextView
+    android:id="@+id/usernameError"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#FF0000"
+    android:visibility="gone" />
+   
+   
+   <EditText
+				android:id="@+id/password"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="10dp"
+				android:paddingLeft="22dp"
+				android:paddingTop="16dp"
+				android:paddingRight="16dp"
+				android:paddingBottom="16dp"
+				android:background="#E1F8DC"
+				android:textSize="14sp"
+				android:textColor="#212121"
+				android:hint="Password"
+				android:textColorHint="#607D8B"
+				android:singleLine="true"
+				android:inputType="textPassword" />
+    <TextView
+    android:id="@+id/usernameError2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="#FF0000"
+    android:visibility="gone" />
+   
+   <Button
+   android:id="@+id/login"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:padding="10dp"
+				android:background="#0C944E"
+				android:gravity="center_horizontal|center_vertical"
+				android:text="Login"
+				android:textSize="18sp"
+				android:textColor="#FFFFFF"/>
+   
+   
+   
+   
+   <Button
+   android:id="@+id/singup"
+   android:layout_width="match_parent"
+   android:layout_height="wrap_content"
+   android:text="Create New Account"
+   android:layout_margin="16dp"
+   android:enabled="true"
+   />
+   
+   	</LinearLayout>
+	</ScrollView>
+ 
+   
+</LinearLayout>

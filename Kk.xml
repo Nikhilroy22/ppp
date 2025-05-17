@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- ব্যাকগ্রাউন্ড রঙ -->
+    <item>
+        <color android:color="#2b411a" />
+    </item>
+
+    <!-- সেন্টার করা আইকন -->
+    <item android:gravity="center">
+        <bitmap
+            
+            
+            android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:src="@drawable/nine"
+				android:scaleType="centerCrop" />
+    </item>
+    
+     <item android:gravity="bottom">
+        <bitmap
+            
+            
+            android:layout_width="40dp"
+				android:layout_height="40dp"
+				android:src="@drawable/nine"
+				android:scaleType="centerCrop" />
+    </item>
+</layer-list>

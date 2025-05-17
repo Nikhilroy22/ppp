@@ -1,0 +1,18 @@
+<!-- res/drawable/bkash_text_icon.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="24dp"
+    android:viewportWidth="100"
+    android:viewportHeight="24">
+    
+    <path
+        android:fillColor="#D1005D"
+        android:pathData="M10,20 L90,20 L90,4 L10,4 Z" />
+
+    <group>
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M20,17 L20,7 H25 L25,10 H27 V7 H32 V17 H27 V13 H25 V17 Z" />
+        <!-- Placeholder: Just box and abstract text -->
+    </group>
+</vector>

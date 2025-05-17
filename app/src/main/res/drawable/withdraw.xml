@@ -1,0 +1,17 @@
+<!-- res/drawable/withdraw_icon.xml -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    
+    <!-- Wallet base -->
+    <path
+        android:fillColor="#000000"
+        android:pathData="M3,7h18v10H3z"/>
+    
+    <!-- Upward arrow (indicating withdraw) -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M12,2l-4,4h3v4h2V6h3l-4,-4z"/>
+</vector>

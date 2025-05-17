@@ -1,0 +1,225 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Top bar layout -->
+    	<LinearLayout
+				android:id="@+id/layout1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="@drawable/bottom"
+				android:paddingBottom="4dp"
+				
+				android:orientation="vertical">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/profile"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/profileImage"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:text="..."
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/notificationIcon"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_notifications_white"
+            android:tint="#FFFFFF" />
+    </RelativeLayout>
+    
+    <TextView
+					android:id="@+id/bdt"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:padding="2dp"
+					android:text="...."
+					android:textSize="18dp"
+					android:textColor="#2b411a"
+					android:singleLine="true"
+					android:textStyle="bold"
+					android:background="@drawable/bdt"	
+					android:layout_gravity="center_horizontal|center_vertical" />
+    </LinearLayout>
+   
+
+    <!-- Content with SwipeRefresh and Scroll -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    
+    >
+
+    <!-- একটি আইটেম -->
+    <LinearLayout
+    android:id="@+id/deposit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+        >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/deposit"
+            android:tint="#0b0b0c" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deposit"
+            android:textStyle="bold"
+						android:textColor="#0b0b0c"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+    <!-- অন্যান্য আইটেম কপি করে নাম ও আইকন পাল্টাও -->
+    <!-- Super Deals -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/withdraw"
+            android:tint="#5be350" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Withdraw"
+            android:textStyle="bold"
+						android:textColor="#0b0b0c"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+
+<LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/refer"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refer"
+            android:textStyle="bold"
+						android:textColor="#0b0b0c"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+
+
+
+<LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/msg"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="সুপার ডিল"
+            android:textStyle="bold"
+						android:textColor="#0b0b0c"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/msg"
+             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="সুপার ডিল"
+            android:textStyle="bold"
+						android:textColor="#0b0b0c"
+            android:layout_marginTop="4dp"/>
+    </LinearLayout>
+    <!-- Tong Offers, Rate Cutters, Watch Pack, Gift, Special Offer এইভাবে সবগুলো অ্যাড করো -->
+
+</GridLayout>
+                
+            </LinearLayout>
+        </ScrollView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>
