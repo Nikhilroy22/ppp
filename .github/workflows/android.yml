@@ -28,5 +28,5 @@ jobs:
     - name: Grant relese app
       uses: actions/upload-artifact@v4
       with:
-          name: apk-ppp-release
+          name: apk-nikhil-release
           path: app/build/outputs/apk/release
