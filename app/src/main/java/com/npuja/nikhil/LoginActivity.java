@@ -68,9 +68,7 @@ public class LoginActivity extends AppCompatActivity {
        
        mySwitch.setChecked(act);
 
-mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-    @Override
-    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+mySwitch.setOnCheckedChangeListener(( buttonView, isChecked) -> {
         if (isChecked) {
             // Active অবস্থা
             Toast.makeText(getApplicationContext(), "অ্যাকটিভ", Toast.LENGTH_SHORT).show();
@@ -78,21 +76,10 @@ mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
             // Inactive অবস্থা
             Toast.makeText(getApplicationContext(), "ইনঅ্যাকটিভ", Toast.LENGTH_SHORT).show();
         }
-    }
+    
 });
     
     
-      //Spinner
-      
-      
-      Spinner mySpinner = findViewById(R.id.mySpinner);
-
-// Spinner এর জন্য ডেটা
-String[] options = {"Bkash", "Nagad", "Upay"};
-ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, options);
-adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-mySpinner.setAdapter(adapter);
-      
       
         
 //Register account click

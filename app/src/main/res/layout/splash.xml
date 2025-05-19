@@ -7,35 +7,32 @@
   
     
     	<LinearLayout
-
 			android:id="@+id/linear3"
-
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:padding="8dp"
+			android:layout_height="wrap_content"
+			android:paddingBottom="25dp"
 			android:gravity="center_horizontal|bottom"
-			android:orientation="vertical">
-    	  
-    	  
-    	  <ProgressBar
-		android:id="@+id/progressbar1"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		
-		style="?android:progressBarStyle" />
-			
+			android:orientation="vertical"
+			android:layout_weight="1">
 			<TextView
-				android:id="@+id/textview16"
+				android:id="@+id/textview3"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:layout_marginLeft="5dp"
-				android:text="Npuja"
+				android:text="Powered By"
+				android:textSize="12sp"
+				android:textColor="#B0BEC5" />
+			<TextView
+				android:id="@+id/textview2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:paddingTop="3dp"
+				android:text="Nikhil Roy"
 				android:textSize="20sp"
 				android:textStyle="bold"
 				android:textColor="#FFFFFF" />
-		</LinearLayout>
     
     
     
     
+    </LinearLayout>
     </LinearLayout>

@@ -15,18 +15,7 @@
     android:text="অবস্থা পরিবর্তন করুন" />
   
   
-  <Spinner
-    android:id="@+id/mySpinner"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-				android:layout_margin="20dp"
-				
-				android:background="@drawable/bgi"
-				android:textSize="14sp"
-				android:textColor="#212121"
-				android:padding="10dp"
-				
-				 />
+  
   
   
    

@@ -48,6 +48,22 @@
             android:layout_centerVertical="true"
             android:src="@drawable/ic_notifications_white"
             android:tint="#FFFFFF" />
+            
+            <TextView
+        android:id="@+id/notificationCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/notificationIcon"
+        android:layout_alignEnd="@id/notificationIcon"
+        android:background="@drawable/bg_circle"
+        android:text="5"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:padding="2dp"
+        android:minWidth="16dp"
+        android:gravity="center"
+        />
+            
     </RelativeLayout>
     
     <TextView
@@ -55,12 +71,13 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:padding="2dp"
-					android:text="...."
+					android:text="0 BDT"
 					android:textSize="18dp"
 					android:textColor="#2b411a"
 					android:singleLine="true"
 					android:textStyle="bold"
 					android:background="@drawable/bdt"	
+					android:drawableLeft="@drawable/ic_bdt"
 					android:layout_gravity="center_horizontal|center_vertical" />
     </LinearLayout>
    
@@ -85,7 +102,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:columnCount="3"
+    android:columnCount="4"
     
     >
 
@@ -217,6 +234,16 @@
     <!-- Tong Offers, Rate Cutters, Watch Pack, Gift, Special Offer এইভাবে সবগুলো অ্যাড করো -->
 
 </GridLayout>
+
+
+<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Other Services"
+        android:textSize="18sp"
+				android:textStyle="bold"
+				android:textColor="#000000"/>
+
                 
             </LinearLayout>
         </ScrollView>

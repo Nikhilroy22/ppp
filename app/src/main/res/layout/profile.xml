@@ -40,90 +40,185 @@
 		android:layout_height="match_parent"
 		android:background="#FFFFFF">
    <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal|center_vertical">
-     <TextView
-						android:id="@+id/textview11"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="Sender Mobile Account Number"
-						android:textSize="16sp"
-						android:textStyle="bold"
-						android:textColor="#9798A2" />
-     
-     <EditText
-					android:id="@+id/EditNumber"
-					android:layout_width="match_parent"
-					android:layout_height="50dp"
-					android:layout_marginLeft="23dp"
-					android:layout_marginRight="23dp"
-					android:padding="8dp"
-					android:background="#1D1B30"
-					android:gravity="center_vertical"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					android:textColor="#9798A2"
-					android:hint="Sender Account Mobile Number"
-					android:textColorHint="#9798A2"
-					android:inputType="numberSigned" />
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FAFAFA"
+    android:layout_margin="10dp">
      
      <TextView
-						android:id="@+id/textview79"
-						android:layout_width="wrap_content"
-						android:layout_height="wrap_content"
-						android:padding="8dp"
-						android:text="Amount"
-						android:textSize="16sp"
-						android:textStyle="bold"
-						android:textColor="#9798A2" />
-     
-     <EditText
-					android:id="@+id/EditAmount"
-					android:layout_width="match_parent"
-					android:layout_height="50dp"
-					android:layout_marginLeft="23dp"
-					android:layout_marginRight="23dp"
-					android:padding="8dp"
-					android:background="#1D1B30"
-					android:gravity="center_vertical"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					android:textColor="#9798A2"
-					android:hint="Amount"
-					android:textColorHint="#9798A2"
-					android:inputType="numberSigned" />
-   
-   <Button
-					android:id="@+id/SendDone"
-					android:layout_width="match_parent"
-					android:layout_height="50dp"
-					android:layout_marginLeft="23dp"
-					android:layout_marginTop="15dp"
-					android:layout_marginRight="23dp"
-					android:layout_marginBottom="15dp"
-					android:background="#657BF8"
-					
-					android:text="Verify Payment"
-					android:textSize="16sp"
-					android:textStyle="bold"
-					android:textColor="#FFFFFF" />
-   
-   
-   <TextView
 					android:id="@+id/textview78"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:gravity="center_horizontal|center_vertical"
+					android:background="#2b411a"
 					android:text="ভেরিফাই করার আগে সেন্ড মানি করতে হবে নাহলে আপনার ভেরিফিকেশন সফল হবে না।"
 					android:textSize="16sp"
 					android:textStyle="bold"
-					android:textColor="#e74141" />
+					android:textColor="#FFFFFF"
+					android:layout_marginBottom="50dp"/>
+					<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="left"
+    android:layout_marginBottom="50dp"
+    >
+					<TextView
+						android:id="@+id/textview9"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="বিকাশ নম্বর ( Send Money korun)."
+						android:textSize="16sp"
+						
+						android:textColor="#000000"	/>
+     <TextView
+						android:id="@+id/textview9"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="01791767154"
+						android:textSize="17dp"
+						android:textColor="#000000"
+						android:drawableRight="@drawable/ic_copy"
+						
+					
+						
+						/>
+						
+						<TextView
+						android:id="@+id/textview9"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Nagad Number( Send Money korun)."
+						android:textSize="16sp"
+						
+						android:textColor="#000000"	/>
+     <TextView
+						android:id="@+id/textview9"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="01908135691"
+						android:textSize="17dp"
+						android:textColor="#000000"
+						android:drawableRight="@drawable/ic_copy"
+						
+					
+						
+						/>
+     </LinearLayout>
+     
+     <!-- form input -->
+     
+   <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Wallet Number"
+        android:textSize="16sp"
+				android:textStyle="bold"
+				android:textColor="#2b411a"/>
+
+    <EditText
+        android:id="@+id/phoneInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Wallet Number"
+        android:inputType="numberDecimal"
+        
+        android:background="@drawable/edittext"
+        android:drawableLeft="@drawable/ic_phone"/>
+        <!-- validation -->
+  <TextView
+  android:id="@+id/phoneError"
+  android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        android:textSize="16sp"
+				android:textColor="#ec2c2c"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deposit Amount(Min 100 BDT)"
+        android:textSize="16sp"
+				android:textStyle="bold"
+				android:textColor="#2b411a"/>
+
+    <EditText
+        android:id="@+id/amountInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Deposit Amount"
+        android:inputType="numberDecimal"
+        
+        android:background="@drawable/edittext"
+        android:drawableLeft="@drawable/ic_bdt"/>
+        
+ <!-- validation -->
+      <TextView
+      android:id="@+id/amountError"
+      android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        android:textSize="16sp"
+				android:textColor="#ec2c2c"/>
+        
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Payment Method"
+        android:textSize="16sp"
+				android:textStyle="bold"
+				android:textColor="#2b411a"/>
+
+    
+    
+  
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edittext">
+
+    <Spinner
+        android:id="@+id/mySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="অপশন"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        
+        android:gravity="center_vertical"/>
+
+    
+</RelativeLayout>
+
+ <!-- validation -->
+  <TextView
+  android:id="@+id/spinnerError"
+  android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        android:textSize="16sp"
+				android:textColor="#ec2c2c"/>
+
+
+    <Button
+        android:id="@+id/depositBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deposit"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#2b411a"
+        android:textColor="#FFFFFF"
+         android:textSize="18sp"
+				android:textStyle="bold"
+        android:padding="12dp" />
+</LinearLayout>
    
-   
-   </LinearLayout>
    
  </ScrollView>
 
