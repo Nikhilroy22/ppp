@@ -48,7 +48,7 @@ public class DataFragment extends Fragment {
   
   public void fetchdata(){
     progressdilog.show(requireContext(), "plz....");
-    http helper = new http(requireActivity());
+    http helper = new http(requireContext());
 
 helper.get("http://localhost:8000/api/data", new http.ResponseCallback() {
     @Override

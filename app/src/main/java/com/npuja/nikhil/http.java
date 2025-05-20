@@ -3,6 +3,7 @@ package com.npuja.nikhil;
 import android.app.Activity;
 import android.os.Handler;
 import android.os.Looper;
+import android.content.Context;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -21,12 +22,12 @@ public class http {
 
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
-    private final Activity activity;
+    private final Context context;
 
-    public http(Activity activity) {
+    public http(Context context) {
         this.client = new OkHttpClient();
         this.mainHandler = new Handler(Looper.getMainLooper());
-        this.activity = activity;
+        this.context = context;
     }
 
     public interface ResponseCallback {

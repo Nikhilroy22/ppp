@@ -36,12 +36,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 public void onNewToken(String token) {
     super.onNewToken(token);
 
+    
     // Toast দিয়ে টোকেন দেখানো
     new Handler(Looper.getMainLooper()).post(() -> {
-    Toast.makeText(getApplicationContext(), "Token: " + token, Toast.LENGTH_LONG).show();
-});
+      Toast.makeText(getApplicationContext(), "Token: ", Toast.LENGTH_LONG).show();});
 
     // চাইলে সার্ভারে পাঠাও
-    //sendTokenToServer(token);
+   // sendTokenToServer(token);
 }
+
+
+
 }

@@ -13,11 +13,14 @@ import org.json.JSONObject;
 
 import com.google.firebase.messaging.FirebaseMessaging;
 
+
+
 public class LoginActivity extends AppCompatActivity {
   
   EditText username, password;
   TextView usernameError, usernameError2;
   Button singup, login;
+   String tokenff;
   
   
   
@@ -41,23 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         usernameError = findViewById(R.id.usernameError);
         usernameError2 = findViewById(R.id.usernameError2);
         
-      //  fcm token
-    
-    
-    FirebaseMessaging.getInstance().getToken()
-    .addOnCompleteListener(task -> {
-        if (!task.isSuccessful()) {
-            username.setText("Fetching FCM registration token failed");
-            return;
-        }
-
-        // Get new FCM registration token
-        String token = task.getResult();
-
-        // Firestore এ সেভ করো
-        username.setText(token);
-        
-    });
+      
         
        //Switch
        
@@ -79,6 +66,22 @@ mySwitch.setOnCheckedChangeListener(( buttonView, isChecked) -> {
     
 });
     
+      
+//  fcm token
+    FirebaseMessaging.getInstance().getToken()
+    .addOnCompleteListener(task -> {
+        if (!task.isSuccessful()) {
+            
+            return;
+        }
+
+        // Get new FCM registration token
+        tokenff = task.getResult();
+
+        // Firestore এ সেভ করো
+      //  nagad.setText(token);
+        
+    });
     
       
         
@@ -148,7 +151,8 @@ helper.post("http://localhost:8000/api/login", jsonBody, new http.ResponseCallba
         JSONObject json = new JSONObject(response);
         
         if(json.has("token")){
-          
+          sendTokenToServer();
+         
           startActivity(new Intent(LoginActivity.this, MainActivity.class));
           finish();
           
@@ -200,4 +204,30 @@ helper.post("http://localhost:8000/api/login", jsonBody, new http.ResponseCallba
    
         });
         
-   }}
+   }
+  
+  
+  public void sendTokenToServer(){
+     
+      
+  
+String jsonBody = "{\"ftoken\":\"" + tokenff + "\"}";
+    http helper = new http(this);
+    
+    helper.post("http://localhost:8000/api/tkn", jsonBody, new http.ResponseCallback() {
+    @Override
+    public void onSuccess(String response) {
+      //Snackbark.show(findViewById(android.R.id.content), response);
+      Toast.makeText(LoginActivity.this, "Ok " + response, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onError(Exception e) {
+        Toast.makeText(LoginActivity.this, "Post Failed" + e.getMessage(), Toast.LENGTH_SHORT).show();
+    }
+});
+  
+}
+  
+  
+}

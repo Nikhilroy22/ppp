@@ -12,18 +12,25 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 
 public class HomeFragment extends Fragment {
 	
 	private MyViewModel viewModel;
 	
 	LinearLayout ideposit;
-	
+	ImageView notification;
 	Button button;
-	TextView name, amount;
+	TextView name, amount, notcc;
 	private SwipeRefreshLayout swipeRefreshLayout;
 	String tokenget;
 	
@@ -42,7 +49,20 @@ public class HomeFragment extends Fragment {
 		 
 		 
 		  ideposit = _view.findViewById(R.id.deposit);
+		  notification = _view.findViewById(R.id.notificationIcon);
+		  notcc = _view.findViewById(R.id.notificationCount);
 		  
+		  // Firebase
+		  FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+db.collection("deposit")
+    .whereEqualTo("method", "Upay")
+    .addSnapshotListener((queryDocumentSnapshots, error) -> {
+        if (error == null && queryDocumentSnapshots != null) {
+            int unreadCount = queryDocumentSnapshots.size();
+            notcc.setText(String.valueOf(unreadCount));
+        }
+    });
 		  
 		  //Deposite
 		  ideposit.setOnClickListener(v -> {
@@ -51,6 +71,12 @@ public class HomeFragment extends Fragment {
 		    
 		  });
 		  
+		  //notificationbtn
+		  notification.setOnClickListener(v -> {
+		    
+		    startActivity(new Intent(requireContext(), NotificationActivity.class));
+		    
+		  });
 		  
 		  
 		  StoreHelper gtoken = new StoreHelper(requireContext());
@@ -101,7 +127,7 @@ public class HomeFragment extends Fragment {
   public void authdata(){
     
     
-     http helper = new http(requireActivity());
+     http helper = new http(requireContext());
 
 helper.getauth("http://localhost:8000/api/user", tokenget, new http.ResponseCallback() {
     @Override

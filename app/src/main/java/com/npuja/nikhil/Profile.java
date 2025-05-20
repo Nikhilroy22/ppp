@@ -8,17 +8,30 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import android.content.*;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.HashMap;
+import java.util.Map;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class Profile extends AppCompatActivity {
   
-  TextView perror, aerror, serror;
+  FirebaseFirestore db;
+  
+  TextView perror, aerror, serror, nagad;
   EditText phone, amount;
   ImageView imageView;
   Button deposit;
@@ -43,6 +56,7 @@ public class Profile extends AppCompatActivity {
         perror = findViewById(R.id.phoneError);
         aerror = findViewById(R.id.amountError);
         serror = findViewById(R.id.spinnerError);
+        nagad = findViewById(R.id.nagadset);
         
         
   
@@ -53,9 +67,23 @@ public class Profile extends AppCompatActivity {
           getOnBackPressedDispatcher().onBackPressed();
           
         });
+       // click to copy
+       nagad.setOnClickListener(v ->{
+          
+          String textToCopy = nagad.getText().toString();
+
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Copied Text", textToCopy);
+                clipboard.setPrimaryClip(clip);
+
+                Toast.makeText(Profile.this, "টেক্সট কপি হয়েছে", Toast.LENGTH_SHORT).show();
+          
+        });
        
        
-        // Deposit Button setOnClickListener
+       
+       
+        // Deposit Button 
         deposit.setOnClickListener(v ->{
           String sphone = phone.getText().toString();
           String samount = amount.getText().toString();
@@ -110,7 +138,21 @@ public class Profile extends AppCompatActivity {
           }
           
           if(!haserror){
-          Toast.makeText(this, "Click korci", Toast.LENGTH_SHORT).show();
+            db = FirebaseFirestore.getInstance();
+            
+            
+          Map<String, Object> post = new HashMap<>();
+post.put("mobile", sphone);
+post.put("amount", samount);
+post.put("method", sspinner);
+
+
+db.collection("deposit")
+    .add(post)
+    .addOnSuccessListener(documentReference -> 
+        Toast.makeText(this, "পোস্ট সফলভাবে যুক্ত হয়েছে", Toast.LENGTH_SHORT).show())
+    .addOnFailureListener(e -> 
+        Toast.makeText(this, "পোস্ট ব্যর্থ: " + e.getMessage(), Toast.LENGTH_SHORT).show());
           
           }
           
@@ -118,9 +160,7 @@ public class Profile extends AppCompatActivity {
         });
         
         
-        
-       //Spinner
-      
+   
       
       
 
@@ -131,26 +171,10 @@ adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 mySpinner.setAdapter(adapter);
       
       
-      
-      viewModel = new ViewModelProvider(Profile.this).get(MyViewModel.class);
-		  
-		  viewModel.getData().observe(Profile.this, jsonObject -> {
-            try {
-                String namee = jsonObject.getString("name");
-                String amounte = jsonObject.getString("amount");
-                //String email = jsonObject.getString("email");
-
-                perror.setText(namee);
-            perror.setVisibility(View.VISIBLE);
-                Toast.makeText(this, "Click korci ok", Toast.LENGTH_SHORT).show();
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-                Toast.makeText(this, "Click korci faided", Toast.LENGTH_SHORT).show();
-            }
-        }); 
-  
-        
         
    }
+   
+   
+   
+
    }
